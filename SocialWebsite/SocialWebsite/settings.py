@@ -133,3 +133,21 @@ EMAIL_PORT = 587
 EMAIL_HOST_USER = "koykhaled@gmail.com"
 EMAIL_HOST_PASSWORD = "oepx iomz rzzu ehym"
 EMAIL_USE_TLS = True
+
+
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.ScryptPasswordHasher',
+]
+
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+
+AUTHENTICATION_BACKENDS = [
+    'account.authentication.EmailAuthBackend',
+]
